@@ -4,17 +4,27 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx|css|scss)\"",
+    "format": "npm run prettier -- --write"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^12.1.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.12",
+    "@types/graphql": "^14.5.0",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.2",
     "typescript": "4.0"
   }
 }
