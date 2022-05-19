@@ -2,6 +2,7 @@ import { AppProps } from 'next/app'
 import React from 'react'
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '../utils/apollo'
+import { Layout } from '../components/Layout/Layout'
 
 function App({
   Component,
@@ -15,7 +16,9 @@ function App({
   return (
     <>
       <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} err={err} />
+        <Layout>
+          <Component {...pageProps} err={err} />
+        </Layout>
       </ApolloProvider>
     </>
   )
