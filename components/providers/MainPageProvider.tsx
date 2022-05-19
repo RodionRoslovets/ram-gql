@@ -8,15 +8,17 @@ import { main_page, main_pageVariables } from '../../__generated__/main_page'
 export const MainPageContext = createContext({} as IMainPage)
 
 const MainPageProvider: FC = ({ children }) => {
+  const mainPage = new MainPage()
+  mainPage.setVariables(1)
+
   const { data } = useQuery<main_page, main_pageVariables>(MAIN_PAGE, {
-    variables: { page: 1 },
+    variables: mainPage.variables,
   })
 
-  const page = new MainPage()
-  page.setCharacters(data?.characters)
+  mainPage.setCharacters(data?.characters)
 
   return (
-    <MainPageContext.Provider value={{ characters: page.characters }}>
+    <MainPageContext.Provider value={{ characters: mainPage.characters }}>
       {children}
     </MainPageContext.Provider>
   )
