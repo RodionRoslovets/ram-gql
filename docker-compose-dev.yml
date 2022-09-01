@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ram-gql:
+    build:
+      dockerfile: dev.Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      #for next copy ., node_modules and .next folders
+      - .:/app
+      - /app/node_modules
+      - /app/.next
