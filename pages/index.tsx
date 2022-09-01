@@ -16,8 +16,7 @@ const IndexPage = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = await initializeApollo()
-  const mainPage = new CMainPage()
-  mainPage.setVariables(1)
+  const mainPage = new CMainPage(1)
 
   await client.query<main_page, main_pageVariables>({
     query: MAIN_PAGE,
@@ -28,6 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       __APOLLO_STATE__: client.cache.extract(),
     },
+    revalidate: +process.env.NEXT_PUBLIC_LIFETIME,
   }
 }
 
