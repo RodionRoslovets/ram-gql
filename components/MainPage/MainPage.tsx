@@ -11,7 +11,7 @@ export const MainPage: FC = () => {
       <ul>
         {characters?.map((char) => (
           <li key={char.id}>
-            <Link href="/" passHref>
+            <Link href={`/character/${char.id}`} passHref>
               <a>
                 <figure>
                   <Image

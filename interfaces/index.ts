@@ -6,11 +6,19 @@ export interface IWithImage {
   image: string
 }
 
-export interface ICharacter extends IWithId, IWithImage {
+export interface ICharacterShort extends IWithId, IWithImage {
   name: string
 }
 
 //pages
 export interface IMainPage {
-  characters: ICharacter[]
+  characters: ICharacterShort[]
+}
+
+export interface ICharacterDetail extends ICharacterShort {
+  status: string
+  species: string
+  type: string
+  gender: string
+  created: string
 }
