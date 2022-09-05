@@ -5,9 +5,17 @@ export interface IWithId {
 export interface IWithImage {
   image: string
 }
+export interface IWithName {
+  name: string
+}
 
 export interface ICharacterShort extends IWithId, IWithImage {
   name: string
+}
+
+export interface ILocation extends IWithId, IWithName {
+  type: string
+  dimension: string
 }
 
 //pages
@@ -21,4 +29,6 @@ export interface ICharacterDetail extends ICharacterShort {
   type: string
   gender: string
   created: string
+  location?: ILocation
+  origin?: ILocation
 }

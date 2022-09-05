@@ -37,6 +37,8 @@ export class CharacterDetail {
       gender: characterData.character.gender,
       image: characterData.character.image,
       type: characterData.character.type,
+      location: characterData.character.location,
+      origin: characterData.character.origin,
     }
   }
 }

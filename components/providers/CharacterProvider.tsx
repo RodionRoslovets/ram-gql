@@ -16,7 +16,8 @@ const CharacterProvider: FC<{ id: string }> = ({ id, children }) => {
     variables: { id },
   })
 
-  const character = new CharacterDetail(data).character
+  const characterData = new CharacterDetail(data)
+  const character = characterData.character
 
   return (
     <CharacterContext.Provider value={{ character }}>

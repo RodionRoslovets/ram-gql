@@ -19,6 +19,14 @@ export const CharacterDetail: FC = () => {
       <p>{character.species}</p>
       <p>{character.type}</p>
       <p>{character.created}</p>
+
+      <p>{character.location?.name}</p>
+      <p>{character.location?.type}</p>
+      <p>{character.location?.dimension}</p>
+
+      <p>{character.origin?.name}</p>
+      <p>{character.origin?.type}</p>
+      <p>{character.origin?.dimension}</p>
     </div>
   )
 }

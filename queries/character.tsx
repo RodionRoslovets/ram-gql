@@ -1,4 +1,5 @@
 import gql from 'graphql-tag'
+import { LOCATION } from './fragments/location'
 
 export const CHARACTER = gql`
   query character($id: ID!) {
@@ -11,6 +12,13 @@ export const CHARACTER = gql`
       gender
       image
       created
+      location {
+        ...location
+      }
+      origin {
+        ...location
+      }
     }
   }
+  ${LOCATION}
 `
